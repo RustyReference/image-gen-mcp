@@ -1,0 +1,19 @@
+[project]
+name = "image-gen-mcp"
+version = "0.1.0"
+
+readme = "README.md"
+authors = [
+    { name = "Charles Doan" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "mcp[cli]>=2.0.0",
+]
+
+[project.scripts]
+image-gen-mcp = "image_gen_mcp:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
