@@ -99,12 +99,5 @@ def get_venice_image(prompt: str):
     veniceUrl = f"{VENICE_BASE_URL}/image/generate"
     venice_image_request(veniceUrl, prompt)
 
-# runner 
-prompt = """
-<NEED NEW PROMPT>
-"""
-openAIUrl = f"{VENICE_BASE_URL}/images/generations"
-veniceUrl = f"{VENICE_BASE_URL}/image/generate"
-
 if __name__ == "__main__":
     mcp.run(transport="stdio")
