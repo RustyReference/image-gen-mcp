@@ -38,10 +38,12 @@ def openai_image_request(url: str, prompt: str):
         "Content-Type": "application/json"
     }
 
+    # Make the API call
     response = requests.post(url, json=payload, headers=headers)
 
     response.raise_for_status()
 
+    # Save the image as a file
     b64 = response.json()["data"][0]["b64_json"]
     with open("generated_image.png", "wb") as fh:
         fh.write(base64.b64decode(b64))
