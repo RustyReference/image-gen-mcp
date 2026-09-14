@@ -10,4 +10,27 @@ wheels/
 .venv
 
 # Environment
+# *.env matches `.env` and `prod.env` but NOT `.env.local` / `.env.production`,
+# so the variants are listed explicitly.
 *.env
+.env
+.env.*
+!.env.example
+
+# Generated output
+generated_image.png
+*.webp
+results.json
+
+# Local tool state
+.pytest_cache/
+.mcp-inspector/
+.ruff_cache/
+.mypy_cache/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
