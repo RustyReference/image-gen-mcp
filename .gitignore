@@ -34,3 +34,5 @@ results.json
 # Editor
 .vscode/
 .idea/
+
+script.py
