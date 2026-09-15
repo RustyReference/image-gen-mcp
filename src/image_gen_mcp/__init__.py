@@ -126,7 +126,6 @@ def generate_image(prompt: str):
 
     # Test the size of the base64 string. 
     # Claude Desktop tests how big the content is BEFORE decoding
-    logger.info(f"Payload size before: {len(b64)}")
     if (len(b64) > MAX_SIZE_CLAUDE_DESKTOP): # Each character is 1 byte; size of b64 == len(b64)
         mime_type = "image/webp"
         png_bytes = base64.b64decode(b64)
@@ -137,7 +136,6 @@ def generate_image(prompt: str):
             webp_bytes = webp_buffer.getvalue()
 
         b64 = base64.b64encode(webp_bytes).decode("utf-8")
-        logger.info(f"Payload size after: {len(b64)}")
     
     return types.ImageContent(type="image", data=b64, mime_type=mime_type)
 
